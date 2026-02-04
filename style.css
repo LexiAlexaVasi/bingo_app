@@ -3,6 +3,25 @@
     box-sizing: border-box;
 }
 
+
+
+/* VIDEO BACKGROUND */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* overlay ca să se vadă textul */
+.app {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
 /* GENERAL */
 body {
     margin: 0;
