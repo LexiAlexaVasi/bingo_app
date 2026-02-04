@@ -1,26 +1,59 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+/* GENERAL */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #eaeaea;
+    background: #2b2b2b;
     text-align: center;
+
+    /* NOU */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
     background: #7ecbff;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
+    font-size: 18px;
 }
 
+/* CONTAINER */
 .container {
-    max-width: 360px;
-    margin: 20px auto;
-    background: #f2f2f2;
-    padding: 20px;
-    border-radius: 6px;
+    width: 100%;
+    max-width: 380px;   /* mai mare pe mobil */
+    min-height: 420px;  /* NU mai arată mic */
+    margin: 0 auto;
+    background: #3a3a3a;
+    padding: 24px;
+    border-radius: 12px;
 }
 
+/* BUTOANE */
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.primary { background: #3b2a8f; }
+.secondary { background: #8b3a2b; }
+
+/* PLACEHOLDER */
 .placeholder {
-    height: 150px;
+    width: 100%;
+    height: 180px;
     background: #ddd;
     display: flex;
     align-items: center;
@@ -28,6 +61,7 @@ header {
     margin-bottom: 20px;
 }
 
+/* AVATAR */
 .avatar {
     width: 120px;
     height: 120px;
@@ -36,34 +70,19 @@ header {
     margin: 0 auto 20px;
 }
 
+/* INPUT */
 input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.btn {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
+    font-size: 16px;
 }
 
-.primary {
-    background: #3b2a8f;
-}
-
-.secondary {
-    background: #8b3a2b;
-}
-
+/* GRID BINGO */
 .grid {
     display: grid;
-    gap: 8px;
-    margin: 15px 0;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 .grid-4 {
@@ -77,15 +96,12 @@ input {
 .cell {
     background: #7b6fb5;
     color: white;
-    padding: 10px;
+    padding: 12px 6px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
-.small {
-    font-size: 10px;
-}
-
+/* LINKS */
 .links {
     display: flex;
     justify-content: space-between;
@@ -99,4 +115,66 @@ a {
 
 .danger {
     color: red;
+}
+
+/* ========================= */
+/* 📱 TELEFON (default) */
+/* ========================= */
+/* deja optimizat */
+/* 📱 MOBILE FIRST – telefoane */
+@media (max-width: 600px) {
+    header {
+        font-size: 20px;
+        padding: 14px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .placeholder {
+        height: 200px;
+        font-size: 14px;
+    }
+}
+
+/* ========================= */
+/* 📱 TABLETA */
+/* ========================= */
+@media (min-width: 600px) {
+    .container {
+        max-width: 600px;
+    }
+
+    header {
+        font-size: 20px;
+    }
+
+    .cell {
+        font-size: 14px;
+        padding: 16px 8px;
+    }
+}
+
+/* ========================= */
+/* 💻 PC / LAPTOP */
+/* ========================= */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+
+    header {
+        font-size: 22px;
+    }
+
+    .grid-4 {
+        gap: 14px;
+    }
+
+    .cell {
+        font-size: 15px;
+        padding: 20px 10px;
+    }
 }
