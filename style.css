@@ -17,6 +17,7 @@
 /* overlay ca să se vadă textul */
 .app {
     background: rgba(0, 0, 0, 0.6);
+    padding-top: 110px; /* spațiu pentru navbar */
 }
 
 /* GENERAL */
@@ -109,11 +110,21 @@ input {
 }
 
 .grid-4 {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    max-width: 100%;
 }
 
 .grid-6 {
-    grid-template-columns: repeat(6, 1fr);
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 5px;
+    max-width: 100%;
+}
+
+.grid-6#bingo-board {
+    max-width: 700px;
 }
 
 .cell {
@@ -159,6 +170,10 @@ a {
     .placeholder {
         height: 200px;
         font-size: 14px;
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -248,4 +263,194 @@ a {
     .nav-item {
         font-size: 12px;
     }
+}
+/* ========================= */
+/* LISTA BINGO – CARDS */
+/* ========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* CARD */
+.card {
+    text-decoration: none;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* IMAGINEA DE PE BUTOANELE CU LISTE BINGO-URI */
+.card-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.9);
+}
+
+/* TITLUL DE PE BUTOANELE CU LISTE BINGO-URI */
+.card-title {
+    padding: 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: rgba(238, 229, 229, 0.75);
+}
+
+/* PENTRU PAGINA DE BINGO */
+.container h1 {
+    color: #641106;
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(173, 85, 80, 0.4);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+nav button {
+    background: transparent;
+    border: 2px solid #e4e2e2;
+    color: #4a120b;
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav button.active {
+    background: #dd5353;
+    color: #e1d7d7;
+    box-shadow: 0 0 12px rgba(157, 55, 55, 0.6);
+}
+
+#mode-selector-panel {
+    margin: 0 auto 20px;
+    max-width: 700px;
+    color: #dc3f1f;
+}
+
+#mode-selector {
+    width: 100%;
+    background: #222;
+    color: #d25241;
+    border: 2px solid #d64a2e;
+    border-radius: 999px;
+    padding: 10px 16px;
+}
+
+#score-container {
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #da4220;
+    border-radius: 999px;
+    color: #d31d1d;
+    font-weight: bold;
+}
+
+#bingo-board {
+    margin: 30px auto;
+    padding: 24px;
+    max-width: 520px;
+
+    border: 3px solid #641106;   /* VISINIU, LINIE DREAPTĂ */
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 18px rgba(100, 17, 6, 0.4);
+}
+
+.bingo-cell {
+    background: #111;
+    border: 2px solid #641106;
+    border-radius: 8px;
+
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+
+    padding: 20px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bingo-cell:hover {
+    background: #641106;
+    color: #ffffff;
+}
+
+.grid-6 .cell {
+    padding: 14px 6px;
+    font-size: 12px;
+}
+
+#message {
+    margin-top: 20px;
+    text-align: center;
+    color: #ae2626;
+    font-weight: bold;
+}
+body {
+    background: radial-gradient(circle at top, #222 0%, #000 70%);
+}
+
+/* CADRU TITLU + SCOR */
+.bingo-header {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 24px;
+    padding: 14px 40px;
+
+    border: 3px solid #641106;
+    border-radius: 999px;
+
+    background: rgba(100, 17, 6, 0.25);
+    text-align: center;
+}
+
+.bingo-header1 {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 24px;
+    padding: 14px 40px;
+
+    border: 3px solid #c5665a;
+    border-radius: 999px;
+
+    background: rgba(221, 188, 183, 0.25);
+    text-align: center;
+}
+
+.bingo-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+}
+
+.bingo-header p {
+    margin: 4px 0 0;   /* AICI era spațiul mare */
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
 }

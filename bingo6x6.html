@@ -1,62 +1,96 @@
-<!--PAGINA DE BINGO 6X6-->
+<!-- PAGINA DE BINGO 6X6 -->
 
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Bingo 4x4</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo 6x6</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
+<!-- VIDEO BACKGROUND -->
 <video class="bg-video" autoplay muted loop playsinline>
     <source src="videos/background.mp4" type="video/mp4">
 </video>
 
+<!-- NAVBAR SUS -->
 <nav class="top-nav">
     <a href="index.html" class="nav-item">ACASĂ</a>
     <a href="reguli.html" class="nav-item">REGULI</a>
     <a href="liste.html" class="nav-item">BINGO</a>
 </nav>
 
-<div>
+<!-- CONȚINUT PAGINĂ -->
+<main class="app">
 
-    <div class="grid grid-4">
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+    <div class="container">
 
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+        <div class="bingo-header">
+            <h1>Bingo lunar</h1>
+        </div>
 
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+        <div class="bingo-header">
+            <p>Bingouri Realizate: 0</p>
+        </div>
 
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+        <!-- BINGO GRID -->
+        <div id="bingo-board" class="grid grid-6">
 
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+            <div class="cell">Jucător acuză gang</div>
+            <div class="cell">Alba neagră</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
 
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
-        <div class="cell">Jucător acuză gang</div>
+            <div class="cell">Petitie</div>
+            <div class="cell">Aruncă cu obiecte</div>
+            <div class="cell">Înjurătură</div>
+            <div class="cell">Etnie Romă</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+
+            <div class="cell">100% Român</div>
+            <div class="cell">Paris</div>
+            <div class="cell">Roma</div>
+            <div class="cell">Deaf</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+
+            <div class="cell">Pickpockets</div>
+            <div class="cell">Bijuterii false</div>
+            <div class="cell">Zonă aglomerată</div>
+            <div class="cell">Acoliti</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+
+            <div class="cell">Pickpockets</div>
+            <div class="cell">Bijuterii false</div>
+            <div class="cell">Zonă aglomerată</div>
+            <div class="cell">Acoliti</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+
+            <div class="cell">Pickpockets</div>
+            <div class="cell">Bijuterii false</div>
+            <div class="cell">Zonă aglomerată</div>
+            <div class="cell">Acoliti</div>
+            <div class="cell">Ilegal</div>
+            <div class="cell">Sondaj</div>
+        </div>
+
+        <!-- RESET -->
+        <button class="btn secondary">
+            RESETEAZĂ BINGO
+        </button>
+
     </div>
 
-    <button class="btn secondary">RESETEAZĂ BINGO</button>
-
-</div>
+</main>
 
 </body>
 </html>
