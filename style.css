@@ -116,11 +116,10 @@ input {
     max-width: 100%;
 }
 
-.grid-6 {
+.grid-5 {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 5px;
-    max-width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
 }
 
 .grid-6#bingo-board {
@@ -400,9 +399,9 @@ nav button.active {
     color: #ffffff;
 }
 
-.grid-6 .cell {
-    padding: 14px 6px;
-    font-size: 12px;
+.grid-5 .cell {
+    font-size: 13px;
+    padding: 16px 8px;
 }
 
 #message {
