@@ -64,8 +64,8 @@ header {
     font-size: 16px;
 }
 
-.primary { background: #20155f; }
-.secondary { background: #8b3a2b; }
+.primary { background: #4b1910; }
+.secondary { background: #4b1910; }
 
 /*titlu la login*/
 .login-title {
@@ -127,7 +127,7 @@ input {
 }
 
 .cell {
-    background: #7b6fb5;
+    background: #46110f;
     color: white;
     padding: 12px 6px;
     font-size: 12px;
@@ -173,6 +173,37 @@ a {
 
     .grid-6 {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards {
+        min-height: calc(100vh - 160px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+        .logout-btn {
+        bottom: 90px;   /* 👈 deasupra barei browserului */
+        right: 20px;
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+
+    .top-nav {
+        padding: 10px 18px;
+        gap: 16px;
+    }
+
+    .nav-item {
+        font-size: 12px;
     }
 }
 
