@@ -97,10 +97,6 @@ header {
     height: 100%;
     object-fit: cover;
 }
-/*.placeholder {
-    box-shadow: 0 0 25px rgba(100,17,6,0.6);
-    border: 2px solid #641106;
-}*/
 
 /* AVATAR */
 .avatar {
