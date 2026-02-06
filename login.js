@@ -1,20 +1,20 @@
-const users = [
-    { username: "Admin_Killah", password: "Emanuel_Killah_5032" },
-    { username: "Admin_Lexi", password: "Lilith_Tigrut_2027" }
-];
-
-function login() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+async function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
     const error = document.getElementById("error");
 
-    const found = users.find(u => u.username === user && u.password === pass);
+    const res = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
 
-    if (found) {
-        // salvăm userul logat
-        localStorage.setItem("loggedUser", user);
+    const data = await res.json();
+
+    if (data.success) {
+        localStorage.setItem("loggedUser", data.username);
         window.location.href = "liste.html";
     } else {
-        error.textContent = "User sau parolă greșită!";
+        error.textContent = data.message;
     }
 }
