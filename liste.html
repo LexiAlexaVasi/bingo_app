@@ -8,17 +8,27 @@
     <title>Lista Bingo</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- AUTH CHECK -->
+<script src="logout.js"></script>
+<script>
+    checkAuth();
+</script>
+
+<!-- VIDEO BACKGROUND -->
 <video class="bg-video" autoplay muted loop playsinline>
     <source src="videos/background.mp4" type="video/mp4">
 </video>
 
+<!-- NAVBAR -->
 <nav class="top-nav">
     <a href="index.html" class="nav-item">ACASĂ</a>
     <a href="reguli.html" class="nav-item">REGULI</a>
 </nav>
 
+<!-- CONȚINUT PAGINĂ -->
 <div class="list-page">
 
     <div class="cards">
@@ -33,9 +43,36 @@
         </a>
     </div>
 
-    <!-- BUTON SIGN OUT (acum în interiorul paginii) -->
-    <a href="login.html" class="logout-btn">Sign out</a>
+    <button class="logout-btn" onclick="openLogoutModal()">Sign out</button>
+
 </div>
+
+<!-- LOGOUT MODAL -->
+<div id="logout-modal" class="modal-overlay" onclick="closeLogoutModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+        <p>Ești sigur că vrei să faci asta, <strong>Killah</strong>?</p>
+
+        <div class="modal-actions">
+            <button class="btn secondary" onclick="confirmLogout()">DA</button>
+            <button class="btn primary" onclick="closeLogoutModal()">NU</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL SCRIPT -->
+<script>
+function openLogoutModal() {
+    document.getElementById("logout-modal").classList.add("active");
+}
+
+function closeLogoutModal() {
+    document.getElementById("logout-modal").classList.remove("active");
+}
+
+function confirmLogout() {
+    logout(); // din logout.js
+}
+</script>
 
 </body>
 </html>

@@ -19,19 +19,40 @@
     <a href="reguli.html" class="nav-item">REGULI</a>
     <a href="liste.html" class="nav-item">BINGO</a>
 </nav>
-
 <div>
     <div class="avatar"></div>
 
     <h2 class="login-title">Sign In</h2>
 
+    <input type="text" id="username" placeholder="User">
+    <input type="password" id="password" placeholder="Password">
 
-    <input type="text" placeholder="User">
-    <input type="password" placeholder="Password">
+    <button class="btn primary" onclick="login()">Sign in</button>
 
-    <button class="btn primary">Sign in</button>
-
+    <p id="error" style="color:#ff6b6b; margin-top:10px;"></p>
 </div>
+<script>
+    const users = [
+        { username: "Admin_Killah", password: "Emanuel_Killah_5032" },
+        { username: "Admin_Lexi", password: "Lilith_Tigrut_2027" }
+    ];
 
+    function login() {
+        const user = document.getElementById("username").value.trim();
+        const pass = document.getElementById("password").value.trim();
+        const error = document.getElementById("error");
+
+        const found = users.find(
+            u => u.username === user && u.password === pass
+        );
+
+        if (found) {
+            localStorage.setItem("loggedUser", user);
+            window.location.href = "liste.html";
+        } else {
+            error.textContent = "User sau parolă greșită!";
+        }
+    }
+</script>
 </body>
 </html>
