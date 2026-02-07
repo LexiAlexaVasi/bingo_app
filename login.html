@@ -35,8 +35,8 @@
 
 <script>
 async function login() {
-    const user = document.getElementById("username").value.trim();
-    const pass = document.getElementById("password").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
     const error = document.getElementById("error");
 
     error.textContent = "";
@@ -47,10 +47,7 @@ async function login() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                username: user,
-                password: pass
-            })
+            body: JSON.stringify({ username, password })
         });
 
         const data = await res.json();
@@ -60,12 +57,12 @@ async function login() {
             return;
         }
 
-        // login reușit
-        localStorage.setItem("loggedUser", data.username);
+        // salvăm userul logat
+        localStorage.setItem("loggedUser", data.user);
         window.location.href = "liste.html";
 
     } catch (err) {
-        error.textContent = "Serverul nu răspunde!";
+        error.textContent = "Nu se poate conecta la server";
     }
 }
 </script>
