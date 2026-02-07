@@ -140,12 +140,16 @@ input {
 }
 
 .cell {
-    background: #46110f;
-    color: white;
-    padding: 12px 6px;
-    font-size: 12px;
-    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.cell.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #aaa;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+}
+
 
 /* LINKS */
 .links {
@@ -162,6 +166,39 @@ a {
 .danger {
     color: red;
 }
+
+
+
+
+
+
+
+.grid {
+    display: grid;
+    gap: 12px;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cell {
+    background: #4a140d;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+
+
+
+
+
+
 
 /* ========================= */
 /* 📱 TELEFON (default) */
@@ -184,7 +221,7 @@ a {
         font-size: 14px;
     }
 
-    .grid-6 {
+    .grid-5 {
         grid-template-columns: repeat(3, 1fr);
     }
 
