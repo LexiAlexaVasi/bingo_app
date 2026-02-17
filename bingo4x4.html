@@ -10,8 +10,45 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css?v=4">
 </head>
-<body>
 
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const socket = io("https://bingo-backend-3pwi.onrender.com");
+
+    const loggedUser = localStorage.getItem("loggedUser");
+    const cells = document.querySelectorAll(".cell");
+    const resetBtn = document.querySelector(".btn.secondary");
+
+    socket.on("boardState", (state) => {
+        cells.forEach((cell, index) => {
+            cell.classList.toggle("active", state[index]);
+        });
+    });
+
+    // nelogat → view only
+    if (!loggedUser) {
+        cells.forEach(cell => cell.classList.add("readonly"));
+        resetBtn.style.display = "none";
+        return;
+    }
+
+    // logat → trimite toggle
+    cells.forEach((cell, index) => {
+        cell.addEventListener("click", () => {
+            socket.emit("toggleCell", index);
+        });
+    });
+
+    resetBtn.addEventListener("click", () => {
+        socket.emit("resetBoard");
+    });
+
+});
+</script>
+
+<body>
 <!-- VIDEO BACKGROUND -->
 <video class="bg-video" autoplay muted loop playsinline>
     <source src="videos/background.mp4" type="video/mp4">
